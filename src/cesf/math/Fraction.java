@@ -1,17 +1,27 @@
 package cesf.math;
 
-// classe immutable per a representar fraccions enteres
+/**
+ *  classe immutable per a representar fraccions enteres.
+ * @author cesf
+ *
+ */
 public class Fraction {
 
 	private final int num;
 	private final int den;
 	
-	// constructor per defecte
+	/**
+	 *  constructor per defecte
+	 */
 	public Fraction() { 
 		num=0; 
 		den=1;
 	}
-	// constructor amb paràmetres 
+	/**
+	 *  constructor amb paràmetres 
+	 * @param num
+	 * @param den
+	 */
 	public Fraction(int num, int den) { 
 		if (den == 0) 
 			throw new IllegalArgumentException("Denominator can not be zero!"); 
@@ -19,28 +29,43 @@ public class Fraction {
 		this.den = den; 
 	}
 
-	// getters
+	/**
+	 *  getters
+	 * @return
+	 */
 	public int getNum() { return this.num; }
 	public int getDen() { return this.den; }
 	
-	// retorna el valor numèric de la fracció
+	/**
+	 *  retorna el valor numèric de la fracció
+	 * @return
+	 */
 	public double valueOf() {
 		double x = (double)(this.num) / this.den; 
 		return x;
 	}
 	
-	// retorna el valor numèric d'una fracció (versió estàtica)
+	/**
+	 *  retorna el valor numèric d'una fracció (versió estàtica)
+	 * @param a
+	 * @return
+	 */
 	public static double valueOf(Fraction a) {
 		double x = (double)(a.num) / a.den; 
 		return x;		
 	}
 	
-	// retorna una representació en cadena de text
+	/**
+	 *  retorna una representació en cadena de text
+	 */
 	public String toString() {
 		return this.num + "/" + this.den;
 	}
 	
-	// simplifica la fracció al màxim
+	/**
+	 *  simplifica la fracció al màxim
+	 * @return
+	 */
 	public Fraction reduce() {
 		int mcd = mcd(this.num, this.den);
 		int n = this.num / mcd;
@@ -49,45 +74,73 @@ public class Fraction {
 		return new Fraction(n, d);
 	}
 	
-	// retorna F1 + F2
+	/**
+	 *  retorna F1 + F2
+	 * @param b
+	 * @return
+	 */
 	public Fraction add(Fraction b) {
 		int n = this.num * b.den + this.den * b.num;
 		int d = this.den * b.den;
 		return new Fraction(n, d).reduce();
 	}
 	
-	// retorna F1 - F2
+	/**
+	 *  retorna F1 - F2
+	 * @param b
+	 * @return
+	 */
 	public Fraction substract(Fraction b) {
 		int n = this.num * b.den - this.den * b.num;
 		int d = this.den * b.den;
 		return new Fraction(n, d).reduce();
 	}
 	
-	// retorna F1 * F2
+	/**
+	 *  retorna F1 * F2
+	 * @param b
+	 * @return
+	 */
 	public Fraction multiply(Fraction b) {
 		int n = this.num * b.num;
 		int d = this.den * b.den;
 		return new Fraction(n, d).reduce();
 	}
 	
-	// retorna F1 * x
+	/**
+	 *  retorna F1 * x
+	 * @param x
+	 * @return
+	 */
 	public Fraction multiply(int x) {
 		int n = this.num * x;
 		int d = this.den;
 		return new Fraction(n, d).reduce();
 	}
 	
-	// retorna F1 / F2
+	/**
+	 *  retorna F1 / F2
+	 * @param b
+	 * @return
+	 */
 	public Fraction divide(Fraction b) {
 		return this.multiply(b.reciprocal());
 	}
 
-	// retorna 1 / F
+	/**
+	 *  retorna 1 / F
+	 * @return
+	 */
 	public Fraction reciprocal() {
 		return new Fraction(this.den, this.num).reduce();
 	}
 	
-	// troba el MCD del numerador i denominador
+	/**
+	 *  troba el MCD del numerador i denominador
+	 * @param a
+	 * @param b
+	 * @return
+	 */
 	protected int mcd(int a, int b) {
 		int d; 
 		while (b != 0) {
@@ -98,7 +151,11 @@ public class Fraction {
 		return a;
 	}
 
-	// compara dos fraccions
+	/**
+	 *  compara dos fraccions
+	 * @param b
+	 * @return
+	 */
 	public boolean equals(Fraction b) {
 		Fraction f1 = this.reduce();
 		Fraction f2 = b.reduce();
