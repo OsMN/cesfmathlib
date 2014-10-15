@@ -48,7 +48,7 @@ final public class Matrix {
      *  crea i retorna una matriu MxN aleatòria (valors entre 0 i 1)
      * @param M
      * @param N
-     * @return
+     * @return A
      */
     public static Matrix random(int M, int N) {
         Matrix A = new Matrix(M, N);
@@ -61,7 +61,7 @@ final public class Matrix {
     /**
      *  crea i retorna una matriu NxN identitat (uns a la diagonal)
      * @param N
-     * @return
+     * @return I
      */
     public static Matrix identity(int N) {
         Matrix I = new Matrix(N, N);
@@ -96,7 +96,7 @@ final public class Matrix {
 
     /**
      *  crea i retorna la matriu transposada de l'actual
-     * @return
+     * @return A
      */
     public Matrix transpose() {
         Matrix A = new Matrix(N, M);
@@ -109,7 +109,7 @@ final public class Matrix {
     /**
      *  retorna C = A + B
      * @param B
-     * @return
+     * @return C
      */
     public Matrix add(Matrix B) {
         Matrix A = this;
@@ -125,7 +125,7 @@ final public class Matrix {
     /**
      *  retorna C = A - B
      * @param B
-     * @return
+     * @return C
      */
     public Matrix substract(Matrix B) {
         Matrix A = this;
@@ -141,7 +141,7 @@ final public class Matrix {
     /**
      *  compara dos matrius a partir dels valors
      * @param B
-     * @return
+     * @return true or false
      */
     public boolean equals(Matrix B) {
         Matrix A = this;
@@ -157,7 +157,7 @@ final public class Matrix {
     /**
      *  retorna C = A * B
      * @param B
-     * @return
+     * @return C
      */
     public Matrix multiply(Matrix B) {
         Matrix A = this;

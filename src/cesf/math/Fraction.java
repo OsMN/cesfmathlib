@@ -31,14 +31,14 @@ public class Fraction {
 
 	/**
 	 *  getters
-	 * @return
+	 * @return Num y Den
 	 */
 	public int getNum() { return this.num; }
 	public int getDen() { return this.den; }
 	
 	/**
 	 *  retorna el valor numèric de la fracció
-	 * @return
+	 * @return x
 	 */
 	public double valueOf() {
 		double x = (double)(this.num) / this.den; 
@@ -48,7 +48,7 @@ public class Fraction {
 	/**
 	 *  retorna el valor numèric d'una fracció (versió estàtica)
 	 * @param a
-	 * @return
+	 * @return x
 	 */
 	public static double valueOf(Fraction a) {
 		double x = (double)(a.num) / a.den; 
@@ -64,7 +64,7 @@ public class Fraction {
 	
 	/**
 	 *  simplifica la fracció al màxim
-	 * @return
+	 * @return Fraction(n, d)
 	 */
 	public Fraction reduce() {
 		int mcd = mcd(this.num, this.den);
@@ -77,7 +77,7 @@ public class Fraction {
 	/**
 	 *  retorna F1 + F2
 	 * @param b
-	 * @return
+	 * @return Fraction(n, d).reduce()
 	 */
 	public Fraction add(Fraction b) {
 		int n = this.num * b.den + this.den * b.num;
@@ -88,7 +88,7 @@ public class Fraction {
 	/**
 	 *  retorna F1 - F2
 	 * @param b
-	 * @return
+	 * @return Fraction(n, d).reduce()
 	 */
 	public Fraction substract(Fraction b) {
 		int n = this.num * b.den - this.den * b.num;
@@ -99,7 +99,7 @@ public class Fraction {
 	/**
 	 *  retorna F1 * F2
 	 * @param b
-	 * @return
+	 * @return Fraction(n, d).reduce()
 	 */
 	public Fraction multiply(Fraction b) {
 		int n = this.num * b.num;
@@ -110,7 +110,7 @@ public class Fraction {
 	/**
 	 *  retorna F1 * x
 	 * @param x
-	 * @return
+	 * @return Fraction(n, d).reduce()
 	 */
 	public Fraction multiply(int x) {
 		int n = this.num * x;
@@ -121,7 +121,7 @@ public class Fraction {
 	/**
 	 *  retorna F1 / F2
 	 * @param b
-	 * @return
+	 * @return this.multiply(b.reciprocal())
 	 */
 	public Fraction divide(Fraction b) {
 		return this.multiply(b.reciprocal());
@@ -129,7 +129,7 @@ public class Fraction {
 
 	/**
 	 *  retorna 1 / F
-	 * @return
+	 * @return Fraction(this.den, this.num).reduce()
 	 */
 	public Fraction reciprocal() {
 		return new Fraction(this.den, this.num).reduce();
@@ -139,7 +139,7 @@ public class Fraction {
 	 *  troba el MCD del numerador i denominador
 	 * @param a
 	 * @param b
-	 * @return
+	 * @return a
 	 */
 	protected int mcd(int a, int b) {
 		int d; 
@@ -154,7 +154,7 @@ public class Fraction {
 	/**
 	 *  compara dos fraccions
 	 * @param b
-	 * @return
+	 * @return true or false
 	 */
 	public boolean equals(Fraction b) {
 		Fraction f1 = this.reduce();
