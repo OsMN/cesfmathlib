@@ -1,8 +1,9 @@
-# Exercici per als alumnes de DAM2A-EDE del CESF
+# CesfMathLib
 
-Aquí teniu el projecte `CesfMathLib` d'avui. 
+### Projecte per tenir una llibreria de **funcions matematiques**. 
 
-Editeu-lo i modifiqueu-lo, afegint el que se us demani a classe.
-
-Canvi inicial de prova.
+Conte les clases:
+  *[Complex](http://en.wikipedia.org/wiki/Complex_number)
+  *[Fraction](http://en.wikipedia.org/wiki/Fraction_(mathematics))
+  *[Matrix](http://en.wikipedia.org/wiki/Matrix_(mathematics))
 
