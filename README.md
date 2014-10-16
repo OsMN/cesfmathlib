@@ -17,14 +17,13 @@ Fraction | Classe immutable per a representar fraccions enteres.
 Matrix   | Classe immutable per a la representació i manipulació de matrius de nombres reals.
 
 
+Un funcio en `java` de la classe Fraction com a exemple:
+```java
+	public Fraction multiply(int x) {
+		int n = this.num * x;
+		int d = this.den;
+		return new Fraction(n, d).reduce();
+	}
+```
 
-Prueba
 
-Colons can be used to align columns.
-
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |    
-| zebra stripes | are neat      |    $1 |
